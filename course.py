@@ -2,7 +2,7 @@ from exceptions import CourseIdError
 
 class Course:
     def __init__(self, course_name: str, course_id:str, course_credits : int, course_dept):
-        #when validating, you use parameter directly like: course_id. not self.__course_id
+        #Validates course before initializing it
         if len(course_id) != 3  or not course_id.isdigit():
             raise CourseIdError("Course ID must be 3 digits")
         self.__course_name = course_name
